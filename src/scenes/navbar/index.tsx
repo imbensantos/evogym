@@ -22,7 +22,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
 
 
   return (
-    <nav>
+    <header>
       <div className={`${$bg} flex-between fixed top-0 z-30 w-full py-6`}>
         <div className="flex-between mx-auto w-5/6">
           <div className="flex-between w-full gap-16">
@@ -33,7 +33,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
 
             {/* RIGHT SIDE */}
             {isMdScreen ? (
-              <div className="flex-between w-full">
+              <nav className="flex-between w-full">
                 <ul className="flex-between gap-8 text-sm">
                   {navList.map((navItem: string) => (
                     <NavLink page={navItem} selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
@@ -43,7 +43,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
                   <p>Sign In</p>
                   <ActionButton setSelectedPage={setSelectedPage}>Become a Member</ActionButton>
                 </div>
-              </div>
+              </nav>
             ) : (
               <button
                 className="rounded-full bg-secondary-500 p-2"
@@ -57,10 +57,9 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
       </div>
 
       {/* MOBILE MENU MODAL */}
-      {!isMdScreen && isNavToggled ? (
-        <div className="fixed right-0 bottom-0 z-40 h-full w-[300px] bg-primary-100 drop-shadow-xl">
+      <nav className={`${(!isMdScreen && isNavToggled) ? 'right-0' : '-right-full'} fixed bottom-0 z-40 h-full w-[300px] bg-primary-100 drop-shadow-xl transition-all duration-500`}>
           {/* CLOSE ICON */}
-          <div className="flex justify-end p-12">
+          <div className="flex justify-end py-8 px-14">
             <button onClick={() => setIsNavToggled(!isNavToggled)}>
               <XMarkIcon className="h-6 w-6 text-gray-400" />
             </button>
@@ -72,9 +71,8 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
               <NavLink page={navItem} selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
             ))}
           </ul>
-        </div>
-      ) : null }
-    </nav>
+        </nav>
+    </header>
   )
 }
 

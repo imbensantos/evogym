@@ -13,7 +13,7 @@ function NavLink({ className, page, selectedPage, setSelectedPage }: Props) {
 
   return (
     <AnchorLink
-      className={`${selectedPage === pageInLowerCase && "text-primary-500"} transition duration-500 hover:text-primary-300 ${className}`}
+      className={`${selectedPage === pageInLowerCase && "text-primary-500"} transition duration-150 hover:text-primary-300 ${className}`}
       href={`#${pageInLowerCase}`}
       onClick={() => setSelectedPage(pageInLowerCase)}>{page}</AnchorLink>
   )

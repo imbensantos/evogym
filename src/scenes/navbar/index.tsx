@@ -17,7 +17,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
   const [isNavToggled, setIsNavToggled] = useState<boolean>(false)
 
   const navList = ["Home", "Benefits", "Our Classes", "Contact Us"]
-  const isScreenMd = useMediaQuery("(min-width: 1060px)")
+  const isMdScreen = useMediaQuery("(min-width: 1060px)")
   const $bg = !isTopOfPage && "bg-primary-100 drop-shadow"
 
 
@@ -32,7 +32,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
             </a>
 
             {/* RIGHT SIDE */}
-            {isScreenMd ? (
+            {isMdScreen ? (
               <div className="flex-between w-full">
                 <ul className="flex-between gap-8 text-sm">
                   {navList.map((navItem: string) => (
@@ -57,7 +57,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
       </div>
 
       {/* MOBILE MENU MODAL */}
-      {!isScreenMd && isNavToggled ? (
+      {!isMdScreen && isNavToggled ? (
         <div className="fixed right-0 bottom-0 z-40 h-full w-[300px] bg-primary-100 drop-shadow-xl">
           {/* CLOSE ICON */}
           <div className="flex justify-end p-12">

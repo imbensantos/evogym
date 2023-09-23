@@ -2,13 +2,10 @@ import { HomeModernIcon, UserGroupIcon, AcademicCapIcon } from "@heroicons/react
 import BenefitsPageGraphic from "@/assets/BenefitsPageGraphic.png"
 import { motion } from 'framer-motion'
 
-import { SelectedPage } from "@/shared/types"
-import Benefit, { BenefitType } from "./benefit"
-import ActionButton from "@/shared/ActionButton"
 
-type Props = {
-  setSelectedPage: (value: SelectedPage) => void
-}
+import { SelectedPage, useSelectedPage } from "@/contexts/SelectedPageContext"
+import Benefit, { BenefitType } from "./Benefit"
+import ActionButton from "@/shared/ActionButton"
 
 const BENEFITS_LIST: Array<BenefitType> = [
   {
@@ -28,7 +25,8 @@ const BENEFITS_LIST: Array<BenefitType> = [
   },
 ]
 
-const Benefits = ({ setSelectedPage }: Props) => {
+const Benefits = () => {
+  const { setSelectedPage } = useSelectedPage()
   return (
     <section
       id={SelectedPage.Benefits}
@@ -70,7 +68,6 @@ const Benefits = ({ setSelectedPage }: Props) => {
             <Benefit
               key={`benefit-${index}`}
               data={benefitItem}
-              setSelectedPage={setSelectedPage}
             />
           ))}
         </motion.ul>
@@ -116,7 +113,7 @@ const Benefits = ({ setSelectedPage }: Props) => {
             {/* BUTTON */}
             <div className="relative mt-16">
               <div className="before:absolute before:-bottom-20 before:right-40 before:-z-10 before:content-sparkles">
-                <ActionButton setSelectedPage={setSelectedPage}>
+                <ActionButton>
                   Join Now
                 </ActionButton>
               </div>

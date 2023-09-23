@@ -1,22 +1,20 @@
 import { useState } from "react"
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid"
 import Logo from "@/assets/Logo.png"
-import { SelectedPage } from "@/shared/types"
 import useMediaQuery from "@/hooks/useMediaQuery"
 import NavLink from "./NavLink"
 import ActionButton from "@/shared/ActionButton"
 
+const NAV_LIST = ["Home", "Benefits", "Our Classes", "Contact Us"]
+
 type Props = {
   isTopOfPage: boolean,
-  selectedPage: SelectedPage,
-  setSelectedPage: (value: SelectedPage) => void
 }
 
-const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
+const Navbar = ({ isTopOfPage}: Props) => {
 
   const [isNavToggled, setIsNavToggled] = useState<boolean>(false)
 
-  const navList = ["Home", "Benefits", "Our Classes", "Contact Us"]
   const isMdScreen = useMediaQuery("(min-width: 1060px)")
   const $bg = !isTopOfPage && "bg-primary-100 drop-shadow"
 
@@ -35,13 +33,13 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
             {isMdScreen ? (
               <nav className="flex-between w-full">
                 <ul className="flex-between gap-8 text-sm">
-                  {navList.map((navItem: string) => (
-                    <NavLink page={navItem} selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
+                  {NAV_LIST.map((navItem: string) => (
+                    <NavLink page={navItem} />
                   ))}
                 </ul>
                 <div className="flex-between gap-8">
                   <p>Sign In</p>
-                  <ActionButton setSelectedPage={setSelectedPage}>Become a Member</ActionButton>
+                  <ActionButton>Become a Member</ActionButton>
                 </div>
               </nav>
             ) : (
@@ -67,8 +65,8 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
 
           {/* NAV ITEMS */}
           <ul className="ml-[33%] flex flex-col gap-10 text-2xl">
-            {navList.map((navItem: string) => (
-              <NavLink page={navItem} selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
+            {NAV_LIST.map((navItem: string) => (
+              <NavLink page={navItem}  />
             ))}
           </ul>
         </nav>

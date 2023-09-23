@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion'
 
 import Link from '@/shared/Link'
-import { SelectedPage } from '@/shared/types'
+import { SelectedPage } from '@/contexts/SelectedPageContext'
+
 
 export interface BenefitType {
   icon: JSX.Element,
@@ -11,9 +12,9 @@ export interface BenefitType {
 
 type Props = {
   data: BenefitType,
-  setSelectedPage: (value: SelectedPage) => void
 }
-const Benefit = ({ data, setSelectedPage }: Props) => {
+
+const Benefit = ({ data }: Props) => {
   return (
     <motion.div
       className='mt-5 rounded-md border-2 border-gray-100 px-5 py-16 text-center'
@@ -29,7 +30,7 @@ const Benefit = ({ data, setSelectedPage }: Props) => {
       </div>
       <h4 className='font-bold'>{data.title}</h4>
       <p className='my-3 balance'>{data.description}</p>
-      <Link setSelectedPage={setSelectedPage} href={SelectedPage.ContactUs}>
+      <Link href={SelectedPage.ContactUs}>
         Learn More
       </Link>
     </motion.div>

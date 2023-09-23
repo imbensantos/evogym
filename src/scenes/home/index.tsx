@@ -1,8 +1,8 @@
-import AnchorLink from 'react-anchor-link-smooth-scroll'
 import { motion } from 'framer-motion'
 
 import useMediaQuery from '@/hooks/useMediaQuery'
-import { SelectedPage } from '@/shared/types'
+
+import { SelectedPage, useSelectedPage } from '@/contexts/SelectedPageContext'
 import ActionButton from '@/shared/ActionButton'
 
 import HomePageText from '@/assets/HomePageText.png'
@@ -10,12 +10,10 @@ import HomePageGraphic from '@/assets/HomePageGraphic.png'
 import SponsorRedBull from "@/assets/SponsorRedBull.png"
 import SponsorForbes from "@/assets/SponsorForbes.png"
 import SponsorFortune from "@/assets/SponsorFortune.png"
+import Link from '@/shared/Link'
 
-type Props = {
-  setSelectedPage: (value: SelectedPage) => void
-}
-
-const Home = ({ setSelectedPage }: Props) => {
+const Home = () => {
+  const { setSelectedPage } = useSelectedPage()
   const isMdScreen = useMediaQuery("(min-width: 1060px)")
 
   return (
@@ -57,16 +55,14 @@ const Home = ({ setSelectedPage }: Props) => {
               visible: { opacity: 1, x: 0 }
             }}
           >
-            <ActionButton setSelectedPage={setSelectedPage}>
+            <ActionButton>
               Join Now
             </ActionButton>
-            <AnchorLink
-              className='text-sm font-bold text-primary-500 underline hover:text-secondary-500'
-              onClick={() => setSelectedPage(SelectedPage.ContactUs)}
-              href={`#${SelectedPage.ContactUs}`}
+            <Link
+              href={SelectedPage.ContactUs}
             >
               Learn More
-            </AnchorLink>
+            </Link>
           </motion.div>
         </motion.hgroup>
 

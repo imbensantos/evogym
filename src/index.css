@@ -4,7 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body, #root, .app{
+html, body, #root, .app, main{
   height: 100%;
   width: 100%;
   font-family: "DM Sans", sans-serif;

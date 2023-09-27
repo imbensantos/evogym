@@ -55,7 +55,7 @@ const Benefits = () => {
         </motion.hgroup>
 
         <motion.ul
-          className="md:flex items-center justify-between gap-8 mt-5"
+          className="md:grid md:grid-cols-3 place-items-stretch gap-8 mt-5"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
@@ -76,22 +76,22 @@ const Benefits = () => {
         <div className="mt-16  items-center justify-between gap-20 md:mt-28 md:flex">
           <img src={BenefitsPageGraphic} alt="Evogym Member" className="mx-auto" />
           <div className="relative">
+
             {/* TITLE */}
-            <div className="before:absolute before:-top-20 before:-left-20 before:-z-10 before:content-abstractWaves">
-              <motion.h3
-                className="font-montserrat text-3xl font-bold balance"
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.5 }}
-                transition={{ duration: 0.5 }}
-                variants={{
-                  hidden: { opacity: 0, x: 50 },
-                  visible: { opacity: 1, x: 0 }
-                }}
-              >
-                MILIIONS OF HAPPY MEMBERS GETTING <span className="text-primary-500">FIT</span>.
-              </motion.h3>
-            </div>
+            <motion.h3
+              className="before:absolute before:-top-20 before:-left-20 before:-z-10 before:content-abstractWaves font-montserrat text-3xl font-bold balance"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.5 }}
+              variants={{
+                hidden: { opacity: 0, x: 50 },
+                visible: { opacity: 1, x: 0 }
+              }}
+            >
+              MILIIONS OF HAPPY MEMBERS GETTING <span className="text-primary-500">FIT</span>.
+            </motion.h3>
+
             {/* DESC */}
             <motion.div
               initial="hidden"
@@ -110,14 +110,23 @@ const Benefits = () => {
                 Within our gym, countless success stories unfold daily, demonstrating the transformative power of dedication and camaraderie. These stories are an invitation for you to become part of this incredible journey toward personal growth and well-being. Join us and let's achieve greatness together.
               </p>
             </motion.div>
+            
             {/* BUTTON */}
-            <div className="relative mt-16">
-              <div className="before:absolute before:-bottom-20 before:right-40 before:-z-10 before:content-sparkles">
-                <ActionButton>
-                  Join Now
-                </ActionButton>
-              </div>
-            </div>
+            <motion.div 
+              className="relative mt-16"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              variants={{
+                hidden: { opacity: 0, y: 50 },
+                visible: { opacity: 1, y: 0 }
+              }}
+            >
+              <ActionButton className="before:absolute before:-bottom-20 before:right-40 before:-z-10 before:content-sparkles">
+                Join Now
+              </ActionButton>
+            </motion.div>
           </div>
         </div>
       </motion.div>

@@ -3,6 +3,7 @@ import { SelectedPage, SelectedPageContext } from "@/contexts/SelectedPageContex
 import Navbar from "@/scenes/navbar"
 import Home from "@/scenes/home"
 import Benefits from "@/scenes/benefits"
+import OurClasses from "./scenes/ourClasses"
 
 
 
@@ -35,6 +36,7 @@ function App() {
         <main>
           <Home />
           <Benefits />
+          <OurClasses />
         </main>
       </SelectedPageContext.Provider>
     </div>

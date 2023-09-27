@@ -21,7 +21,7 @@ const Navbar = ({ isTopOfPage}: Props) => {
 
   return (
     <header>
-      <div className={`${$bg} flex-between fixed top-0 z-30 w-full py-6`}>
+      <div className={`${$bg} flex-between fixed top-0 z-30 w-full py-6 transition-colors duration-150`}>
         <div className="flex-between mx-auto w-5/6">
           <div className="flex-between w-full gap-16">
             {/* LEFT SIDE */}

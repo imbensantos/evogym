@@ -22,7 +22,7 @@ const Home = () => {
       className='flex flex-col gap-16 bg-gray-20 py-24 md:h-full'
     >
       {/* IMAGE & MAIN HEADER */}
-      <header className="hero md:flex mx-auto w-5/6 items-center justify-center md:h-5/6">
+      <header className="hero max-w-[1366px] md:flex mx-auto w-5/6 items-center justify-center md:h-5/6">
         <motion.hgroup
           className='relative z-10 md:basis-3/5'
           onViewportEnter={() => setSelectedPage(SelectedPage.Home)}

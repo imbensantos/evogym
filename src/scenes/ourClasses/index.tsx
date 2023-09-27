@@ -1,4 +1,3 @@
-import { useRef } from 'react'
 import { SelectedPage, useSelectedPage } from '@/contexts/SelectedPageContext'
 import { motion } from 'framer-motion'
 
@@ -50,15 +49,12 @@ const OurClasses = () => {
 
 
   return (
-    <section 
+    <section
       id={SelectedPage.OurClasses}
-      className='w-full bg-primary-100 py-28'
+      className='w-full min-h-full bg-primary-100 py-28'
     >
-      <motion.div
-        onViewportEnter={() => setSelectedPage(SelectedPage.OurClasses)}
-        className=''
-      >
-        <motion.div
+      <motion.div onViewportEnter={() => setSelectedPage(SelectedPage.OurClasses)}>  
+        <motion.hgroup
           className='mx-auto w-5/6'
           {...fadeRight}
         >
@@ -68,12 +64,12 @@ const OurClasses = () => {
               Led by experienced and passionate instructors, our classes offer a diverse range of options to cater to all fitness levels and preferences. With state-of-the-art facilities, flexible schedules, and a results-oriented approach, our classes are designed to help you achieve your fitness goals while having fun. We continuously improve and adapt to the latest fitness trends, ensuring that your experience at EvoGym is unparalleled. Join us and discover a fitness journey that goes beyond exercise—it's about living a healthier, more vibrant life.
             </p>
           </div>
-        </motion.div>
+        </motion.hgroup>
 
         <div className='mt-10 h-[353px] w-full overflow-x-auto overflow-y-hidden'>
           <ul className='w-[2800px] whitespace-nowrap'>
             {CLASSES_LIST.map((classItem: ClassType, index) => (
-              <Class 
+              <Class
                 key={`${classItem.name}-${index}`}
                 data={classItem}
               />
@@ -81,7 +77,6 @@ const OurClasses = () => {
           </ul>
         </div>
       </motion.div>
-
     </section>
   )
 }

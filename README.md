@@ -1,5 +1,5 @@
 # EvoGym
-EvoGym is a fun, responsive, and animated fitness website that uses `TypeScript`, `Tailwind`, and `Framer Motion`.
+EvoGym is a fun, responsive, and animated fitness website that uses `TypeScript`, `Tailwind`, `Framer Motion`, `Hero Icons`, `Form Submit`, and `React Anchor Link Smooth`.
 
 ## Demo Link: 🔗 
 You can view it here: [ImBenSantos-EvoGym](https://imbensantos-evogym.vercel.app/)

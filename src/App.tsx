@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react"
 import { SelectedPage, SelectedPageContext } from "@/contexts/SelectedPageContext"
-import Navbar from "@/scenes/navbar"
-import Home from "@/scenes/home"
-import Benefits from "@/scenes/benefits"
-import OurClasses from "@/scenes/ourClasses"
-import ContactUs from "@/scenes/contactUs"
-import Footer from "@/scenes/footer"
+import Navbar from "@/components/Navbar"
+import Hero from "@/scenes/Hero"
+import Benefits from "@/scenes/Benefits"
+import OurClasses from "@/scenes/OurClasses"
+import ContactUs from "@/scenes/ContactUs"
+import Footer from "@/components/Footer"
 
 
 
@@ -36,7 +36,7 @@ function App() {
           isTopOfPage={isTopOfPage}
         />
         <main>
-          <Home />
+          <Hero />
           <Benefits />
           <OurClasses />
           <ContactUs />

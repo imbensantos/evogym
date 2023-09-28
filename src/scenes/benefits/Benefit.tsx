@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 
-import Link from '@/shared/Link'
+import Link from '@/components/Link'
 import { SelectedPage } from '@/contexts/SelectedPageContext'
 
 

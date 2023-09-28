@@ -5,8 +5,8 @@ import { motion } from 'framer-motion'
 
 import { SelectedPage, useSelectedPage } from "@/contexts/SelectedPageContext"
 import Benefit, { BenefitType } from "./Benefit"
-import ActionButton from "@/components/ActionButton"
-import { fadeLeft, fadeRight, fadeUp, staggerChildren } from "@/styles/animations"
+import ActionButton from "@/shared/ActionButton"
+import { fadeLeft, fadeRight, fadeUp, staggerChildren } from "@/shared/animations"
 
 const BENEFITS_LIST: Array<BenefitType> = [
   {

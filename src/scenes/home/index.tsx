@@ -3,16 +3,16 @@ import { motion } from 'framer-motion'
 import useMediaQuery from '@/hooks/useMediaQuery'
 
 import { SelectedPage, useSelectedPage } from '@/contexts/SelectedPageContext'
-import ActionButton from '@/components/ActionButton'
+import ActionButton from '@/shared/ActionButton'
 
 import HomePageText from '@/assets/HomePageText.png'
 import HomePageGraphic from '@/assets/HomePageGraphic.png'
 import SponsorRedBull from "@/assets/SponsorRedBull.png"
 import SponsorForbes from "@/assets/SponsorForbes.png"
 import SponsorFortune from "@/assets/SponsorFortune.png"
-import Link from '@/components/Link'
+import Link from '@/shared/Link'
 
-const Hero = () => {
+const Home = () => {
   const { setSelectedPage } = useSelectedPage()
   const isMdScreen = useMediaQuery("(min-width: 1060px)")
 
@@ -91,4 +91,4 @@ const Hero = () => {
   )
 }
 
-export default Hero
+export default Home

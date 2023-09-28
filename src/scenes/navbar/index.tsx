@@ -3,7 +3,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid"
 import Logo from "@/assets/Logo.png"
 import useMediaQuery from "@/hooks/useMediaQuery"
 import NavLink from "./NavLink"
-import ActionButton from "@/components/ActionButton"
+import ActionButton from "@/shared/ActionButton"
 
 const NAV_LIST = ["Home", "Benefits", "Our Classes", "Contact Us"]
 

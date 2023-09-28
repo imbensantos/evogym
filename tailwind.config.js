@@ -17,7 +17,7 @@ export default {
         "secondary-400": "#FFCD58",
         "secondary-500": "#FFC132"
       },
-      backgroundImage: (theme) => ({
+      backgroundImage: () => ({
         "gradient-yellowred": "linear-gradient(90deg, #FF616A 0%, #FFC837 100%)",
         "mobile-home": "url('./assets/HomePageGraphic.png')"
       }),
@@ -26,10 +26,10 @@ export default {
         montserrat: ["Montserrat", "sans-serif"]
       },
       content: {
-        evolveText: "url('./assets/EvolveText.png')",
-        abstractWaves: "url('./assets/AbstractWaves.png')",
-        sparkles: "url('./assets/Sparkles.png')",
-        circles: "url('./assets/Circles.png')",
+        evolveText: "url('@/assets/EvolveText.png')",
+        abstractWaves: "url('@/assets/AbstractWaves.png')",
+        sparkles: "url('@/assets/Sparkles.png')",
+        circles: "url('@/assets/Circles.png')",
       },
       screens: {
         xs: "480px",

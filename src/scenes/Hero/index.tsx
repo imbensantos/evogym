@@ -11,6 +11,7 @@ import SponsorRedBull from "@/assets/SponsorRedBull.png"
 import SponsorForbes from "@/assets/SponsorForbes.png"
 import SponsorFortune from "@/assets/SponsorFortune.png"
 import Link from '@/components/Link'
+import { fadeLeft, fadeRight } from '@/styles/animations'
 
 const Home = () => {
   const { setSelectedPage } = useSelectedPage()
@@ -19,24 +20,17 @@ const Home = () => {
   return (
     <section
       id={SelectedPage.Home}
-      className='flex flex-col gap-16 bg-gray-20 pt-24 pb-12  md:h-full'
+      className='flex flex-col gap-16 bg-gray-20 pt-24 pb-6 md:h-screen'
     >
       <motion.div 
-        className='mx-auto w-5/6'
+        className='mx-auto w-5/6 flex md:h-5/6'
         onViewportEnter={() => setSelectedPage(SelectedPage.Home)}
       >
         {/* IMAGE & MAIN HEADER */}
-        <header className="hero md:flex mx-auto max-w-[1366px] items-center justify-center md:h-5/6">
+        <header className="hero md:flex w-full max-w-[1366px] mx-auto  items-center justify-center">
           <motion.hgroup
-            className='relative z-10 md:basis-3/5'
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: 0.5 }}
-            variants={{
-              hidden: { opacity: 0, x: -50 },
-              visible: { opacity: 1, x: 0 }
-            }}
+            className='relative z-10 md:basis-3/5 mt-16'
+            {...fadeRight}
           >
             <h1 className='before:absolute before:-top-20 before:-left-20 before:-z-10 md:before:content-evolveText'>
               <img src={HomePageText} alt="Evogym" />
@@ -49,14 +43,7 @@ const Home = () => {
 
             <motion.div
               className='mt-8 flex items-center gap-8'
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{ delay: 0.2, duration: 0.5 }}
-              variants={{
-                hidden: { opacity: 0, x: -50 },
-                visible: { opacity: 1, x: 0 }
-              }}
+              {...{ ...fadeRight, transition: { ...fadeRight.transition, delay: 0.2 } }}
             >
               <ActionButton>
                 Join Now
@@ -70,14 +57,20 @@ const Home = () => {
           </motion.hgroup>
 
           {/* IMAGE */}
-          <img className='min-w-0 mx-auto md:mr-0 md:z-10' src={HomePageGraphic} alt="Evogym Trainer" />
+          {/* <img className='min-w-0 mx-auto md:mr-0 md:z-10' src={HomePageGraphic} alt="Evogym Trainer" /> */}
+          <motion.div 
+            className='min-w-0 mx-auto md:mr-0 md:z-10 basis-3/5'
+            {...fadeLeft}
+          >
+            <img className='min-w-0 mx-auto md:mr-0 md:z-10' src={HomePageGraphic} alt="Evogym Trainer" />
+          </motion.div>
 
         </header>
       </motion.div>
       
        {/* SPONSORS */}
        {isMdScreen ? (
-          <div className='flex items-center h-[150px] w-full bg-primary-100 py-10'>
+          <div className='flex items-center h-1/6 w-full bg-primary-100 py-10'>
             <div className='mx-auto w-5/6'>
               <div className='flex w-3/5 items-center justify-between'>
                 <img src={SponsorRedBull} alt="redbull-sponsor" />

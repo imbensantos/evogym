@@ -27,8 +27,8 @@ const Footer = () => {
         <div className="basis-1/4 mt-16 md:mt-0">
           <h2 className="font-bold">Contact Us</h2>
           <ul>
-            <li className="my-5"><a href="mailto:message.contactus+evogym@gmail.com">message.contactus+evogym@gmail.com</a></li>
-            <li className="my-5"><a href="tel:+3334256825"></a>(333) 425-6825</li>
+            <li className="my-5"><a className="break-words" href="mailto:message.contactus+evogym@gmail.com">message.contactus+evogym@gmail.com</a></li>
+            <li className="my-5"><a href="tel:+3334256825"></a>Tel: (333) 425-6825</li>
           </ul>
         </div>
       </div>

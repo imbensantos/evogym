@@ -1,8 +1,20 @@
-export const fadeRight = {
+const initialSettings = {
   initial: "hidden",
   whileInView: "visible",
   viewport: { once: true, amount: 0.5 },
   transition: { duration: 0.5 },
+}
+
+const delaySettings = {
+  ...initialSettings,
+  transition: {
+    duration: 0.5,
+    delay: 0.2
+  }
+}
+
+export const fadeRight = {
+  ...initialSettings,
   variants: {
     hidden: { opacity: 0, x: -50 },
     visible: { opacity: 1, x: 0 }
@@ -10,10 +22,7 @@ export const fadeRight = {
 }
 
 export const fadeLeft = {
-  initial: "hidden",
-  whileInView: "visible",
-  viewport: { once: true, amount: 0.5 },
-  transition: { duration: 0.5 },
+  ...initialSettings,
   variants: {
     hidden: { opacity: 0, x: 50 },
     visible: { opacity: 1, x: 0 }
@@ -21,10 +30,7 @@ export const fadeLeft = {
 }
 
 export const fadeDown = {
-  initial: "hidden",
-  whileInView: "visible",
-  viewport: { once: true, amount: 0.5 },
-  transition: { duration: 0.5 },
+  ...initialSettings,
   variants: {
     hidden: { opacity: 0, y: -50 },
     visible: { opacity: 1, y: 0 }
@@ -32,10 +38,7 @@ export const fadeDown = {
 }
 
 export const fadeUp = {
-  initial: "hidden",
-  whileInView: "visible",
-  viewport: { once: true, amount: 0.5 },
-  transition: { duration: 0.5 },
+  ...initialSettings,
   variants: {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0 }
@@ -53,10 +56,7 @@ export const staggerChildren = {
 }
 
 export const zoomOut = {
-  initial: "hidden",
-  whileInView: "visible",
-  viewport: { once: true, amount: 0.5 },
-  transition: { duration: 0.5 },
+  ...initialSettings,
   variants: {
     hidden: { opacity: 0, scale: .5 },
     visible: { opacity: 1, scale: 1 }
@@ -64,10 +64,7 @@ export const zoomOut = {
 }
 
 export const zoomIn = {
-  initial: "hidden",
-  whileInView: "visible",
-  viewport: { once: true, amount: 0.5 },
-  transition: { duration: 0.5 },
+  ...initialSettings,
   variants: {
     hidden: { opacity: 0, scale: 1.5 },
     visible: { opacity: 1, scale: 1 }

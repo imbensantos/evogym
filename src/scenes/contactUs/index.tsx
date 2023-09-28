@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { SelectedPage, useSelectedPage } from '@/contexts/SelectedPageContext'
 
 import ContactUsPageGraphic from '@/assets/ContactUsPageGraphic.png'
-import { fadeDown, fadeLeft, fadeRight } from '@/shared/animations'
+import { fadeDown, fadeLeft, fadeRight } from '@/styles/animations'
 
 const ContactUs = () => {
   const { setSelectedPage } = useSelectedPage()

@@ -1,7 +1,7 @@
 import { SelectedPage, useSelectedPage } from '@/contexts/SelectedPageContext'
 import { motion } from 'framer-motion'
 
-import { fadeRight, fadeUp, staggerChildren } from '@/shared/animations'
+import { fadeRight, fadeUp, staggerChildren } from '@/styles/animations'
 import Class, { ClassType } from './Class'
 
 import image1 from "@/assets/image1.png"

@@ -3,14 +3,14 @@ import { motion } from 'framer-motion'
 import useMediaQuery from '@/hooks/useMediaQuery'
 
 import { SelectedPage, useSelectedPage } from '@/contexts/SelectedPageContext'
-import ActionButton from '@/shared/ActionButton'
+import ActionButton from '@/components/ActionButton'
 
 import HomePageText from '@/assets/HomePageText.png'
 import HomePageGraphic from '@/assets/HomePageGraphic.png'
 import SponsorRedBull from "@/assets/SponsorRedBull.png"
 import SponsorForbes from "@/assets/SponsorForbes.png"
 import SponsorFortune from "@/assets/SponsorFortune.png"
-import Link from '@/shared/Link'
+import Link from '@/components/Link'
 
 const Home = () => {
   const { setSelectedPage } = useSelectedPage()

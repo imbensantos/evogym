@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react"
 import { SelectedPage, SelectedPageContext } from "@/contexts/SelectedPageContext"
 import Navbar from "@/components/Navbar"
-import Hero from "@/scenes/Hero"
-import Benefits from "@/scenes/Benefits"
-import OurClasses from "@/scenes/OurClasses"
-import ContactUs from "@/scenes/ContactUs"
+import Hero from "@/scenes/HeroSection"
+import Benefits from "@/scenes/BenefitsSection"
+import OurClasses from "@/scenes/OurClassesSection"
+import ContactUs from "@/scenes/ContactUsSection"
 import Footer from "@/components/Footer"
 
 

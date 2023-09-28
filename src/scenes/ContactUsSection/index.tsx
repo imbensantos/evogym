@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { SelectedPage, useSelectedPage } from '@/contexts/SelectedPageContext'
 
 import ContactUsPageGraphic from '@/assets/ContactUsPageGraphic.png'
-import { fadeDown, fadeLeft, fadeRight } from '@/styles/animations'
+import { fadeDown, fadeDownDelay, fadeLeftDelay, fadeRight } from '@/styles/animations'
 
 const ContactUs = () => {
   const { setSelectedPage } = useSelectedPage()
@@ -95,18 +95,23 @@ const ContactUs = () => {
                   </p>
                 )}
 
+              <motion.div
+                className='mt-5'
+                {...fadeDownDelay}
+              >
                 <button
                   type="submit"
-                  className='mt-5 rounded-lg bg-secondary-500 px-20 py-3 transition duration-150 hover:bg-primary-500 hover:text-white'
+                  className='rounded-lg bg-secondary-500 px-20 py-3 transition duration-150 hover:bg-primary-500 hover:text-white'
                 >
                   SUBMIT
                 </button>
+              </motion.div>
             </form>
           </motion.div>
 
           <motion.div
             className='relative mt-16 basis-2/5 md:mt-0'
-            {...{...fadeLeft, transition: {...fadeLeft.transition, delay: 0.2}}}
+            {...fadeLeftDelay}
           >
             <div className='md:before:content-evolveText w-full before:absolute before:-bottom-20 before:right-10 before:-z-10'>
               <img className='w-full md:max-w-md mx-auto' src={ContactUsPageGraphic} alt="Come join us!" />

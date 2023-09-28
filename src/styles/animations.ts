@@ -21,12 +21,22 @@ export const fadeRight = {
   }
 }
 
+export const fadeRightDelay = {
+  ...delaySettings,
+  variants: {...fadeRight.variants}
+}
+
 export const fadeLeft = {
   ...initialSettings,
   variants: {
     hidden: { opacity: 0, x: 50 },
     visible: { opacity: 1, x: 0 }
   }
+}
+
+export const fadeLeftDelay = {
+  ...delaySettings,
+  variants: {...fadeLeft.variants}
 }
 
 export const fadeDown = {
@@ -37,12 +47,22 @@ export const fadeDown = {
   }
 }
 
+export const fadeDownDelay = {
+  ...delaySettings,
+  variants: {...fadeDown.variants}
+}
+
 export const fadeUp = {
   ...initialSettings,
   variants: {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0 }
   }
+}
+
+export const fadeUpDelay = {
+  ...delaySettings,
+  variants: {...fadeUp.variants}
 }
 
 export const staggerChildren = {

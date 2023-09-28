@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 import { SelectedPage, useSelectedPage } from "@/contexts/SelectedPageContext"
 import Benefit, { BenefitType } from "./Benefit"
 import ActionButton from "@/components/ActionButton"
-import { fadeLeft, fadeRight, fadeUp, staggerChildren } from "@/styles/animations"
+import { fadeLeft, fadeRight, fadeRightDelay, fadeUpDelay, staggerChildren } from "@/styles/animations"
 
 const BENEFITS_LIST: Array<BenefitType> = [
   {
@@ -75,7 +75,7 @@ const Benefits = () => {
 
             {/* DESC */}
             <motion.div
-              {...{ ...fadeRight, transition: { ...fadeRight.transition, delay: 0.2 } }}
+              {...fadeRightDelay}
             >
               <p className="my-5 balance">
                 Fitness isn't just about the time spent on the treadmill or lifting weights; it's about living a healthier, more vibrant life. Our mission is not only to help individuals reach their fitness objectives, but also to cultivate a supportive community that empowers people to lead happier, healthier lives.
@@ -88,7 +88,7 @@ const Benefits = () => {
             {/* BUTTON */}
             <motion.div
               className="relative mt-16"
-              {...{ ...fadeUp, transition: { ...fadeUp.transition, delay: 0.2 } }}
+              {...fadeUpDelay}
             >
               <ActionButton className="before:absolute before:-bottom-20 before:right-40 before:-z-10 before:content-sparkles">
                 Join Now

@@ -11,7 +11,7 @@ import SponsorRedBull from "@/assets/SponsorRedBull.png"
 import SponsorForbes from "@/assets/SponsorForbes.png"
 import SponsorFortune from "@/assets/SponsorFortune.png"
 import Link from '@/components/Link'
-import { fadeLeft, fadeRight } from '@/styles/animations'
+import { fadeLeft, fadeRight, fadeRightDelay } from '@/styles/animations'
 
 const Home = () => {
   const { setSelectedPage } = useSelectedPage()
@@ -43,7 +43,7 @@ const Home = () => {
 
             <motion.div
               className='mt-8 flex items-center gap-8'
-              {...{ ...fadeRight, transition: { ...fadeRight.transition, delay: 0.2 } }}
+              {...fadeRightDelay}
             >
               <ActionButton>
                 Join Now

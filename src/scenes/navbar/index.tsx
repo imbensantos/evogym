@@ -11,7 +11,7 @@ type Props = {
   isTopOfPage: boolean,
 }
 
-const Navbar = ({ isTopOfPage}: Props) => {
+const Navbar = ({ isTopOfPage }: Props) => {
 
   const [isNavToggled, setIsNavToggled] = useState<boolean>(false)
 
@@ -33,8 +33,8 @@ const Navbar = ({ isTopOfPage}: Props) => {
             {isMdScreen ? (
               <nav className="flex-between w-full">
                 <ul className="flex-between gap-8 text-sm">
-                  {NAV_LIST.map((navItem: string) => (
-                    <NavLink page={navItem} />
+                  {NAV_LIST.map((navItem: string, index) => (
+                    <NavLink key={`${navItem}-${index}`} page={navItem} />
                   ))}
                 </ul>
                 <div className="flex-between gap-8">
@@ -56,20 +56,20 @@ const Navbar = ({ isTopOfPage}: Props) => {
 
       {/* MOBILE MENU MODAL */}
       <nav className={`${(!isMdScreen && isNavToggled) ? 'right-0' : '-right-full'} fixed bottom-0 z-40 h-full w-[300px] bg-primary-100 drop-shadow-xl transition-all duration-500`}>
-          {/* CLOSE ICON */}
-          <div className="flex justify-end py-8 px-14">
-            <button onClick={() => setIsNavToggled(!isNavToggled)}>
-              <XMarkIcon className="h-6 w-6 text-gray-400" />
-            </button>
-          </div>
+        {/* CLOSE ICON */}
+        <div className="flex justify-end py-8 px-14">
+          <button onClick={() => setIsNavToggled(!isNavToggled)}>
+            <XMarkIcon className="h-6 w-6 text-gray-400" />
+          </button>
+        </div>
 
-          {/* NAV ITEMS */}
-          <ul className="ml-[33%] flex flex-col gap-10 text-2xl">
-            {NAV_LIST.map((navItem: string) => (
-              <NavLink page={navItem}  />
-            ))}
-          </ul>
-        </nav>
+        {/* NAV ITEMS */}
+        <ul className="ml-[33%] flex flex-col gap-10 text-2xl">
+          {NAV_LIST.map((navItem: string, index) => (
+            <NavLink key={`${navItem}-${index}`} page={navItem} />
+          ))}
+        </ul>
+      </nav>
     </header>
   )
 }

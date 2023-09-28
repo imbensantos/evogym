@@ -21,9 +21,12 @@ const ContactUs = () => {
   return (
     <section
       id={SelectedPage.ContactUs}
-      className='mx-auto w-5/6 pt-28 pb-32 min-h-full'
+      className='pt-28 pb-32 min-h-full'
     >
-      <motion.div onViewportEnter={() => setSelectedPage(SelectedPage.ContactUs)}>
+      <motion.div 
+        className='mx-auto w-5/6'
+        onViewportEnter={() => setSelectedPage(SelectedPage.ContactUs)}
+      >
         <motion.hgroup
           className='md:w-3/5'
           {...fadeRight}

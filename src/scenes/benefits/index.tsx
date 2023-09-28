@@ -6,6 +6,7 @@ import { motion } from 'framer-motion'
 import { SelectedPage, useSelectedPage } from "@/contexts/SelectedPageContext"
 import Benefit, { BenefitType } from "./Benefit"
 import ActionButton from "@/shared/ActionButton"
+import { fadeLeft, fadeRight, fadeUp, staggerChildren } from "@/shared/animations"
 
 const BENEFITS_LIST: Array<BenefitType> = [
   {
@@ -35,14 +36,7 @@ const Benefits = () => {
       <motion.div onViewportEnter={() => setSelectedPage(SelectedPage.Benefits)}>
         <motion.hgroup
           className="my-4 md:my-5 md:w-3/5"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.5 }}
-          variants={{
-            hidden: { opacity: 0, x: -50 },
-            visible: { opacity: 1, x: 0 }
-          }}
+          {...fadeRight}
         >
           <h2 className="font-montserrat text-3xl font-bold">
             MORE THAN JUST A GYM.
@@ -56,13 +50,7 @@ const Benefits = () => {
 
         <motion.ul
           className="md:grid md:grid-cols-3 place-items-stretch gap-8 mt-5"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
-          variants={{
-            hidden: {},
-            visible: { transition: { staggerChildren: 0.2 } },
-          }}
+          {...staggerChildren}
         >
           {BENEFITS_LIST.map((benefitItem: BenefitType, index: number) => (
             <Benefit
@@ -80,28 +68,14 @@ const Benefits = () => {
             {/* TITLE */}
             <motion.h3
               className="before:absolute before:-top-20 before:-left-20 before:-z-10 before:content-abstractWaves font-montserrat text-3xl font-bold balance"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{ duration: 0.5 }}
-              variants={{
-                hidden: { opacity: 0, x: 50 },
-                visible: { opacity: 1, x: 0 }
-              }}
+              {...fadeLeft}
             >
               MILIIONS OF HAPPY MEMBERS GETTING <span className="text-primary-500">FIT</span>.
             </motion.h3>
 
             {/* DESC */}
             <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{ delay: 0.2, duration: 0.5 }}
-              variants={{
-                hidden: { opacity: 0, x: -50 },
-                visible: { opacity: 1, x: 0 }
-              }}
+              {...{ ...fadeRight, transition: { ...fadeRight.transition, delay: 0.2 } }}
             >
               <p className="my-5 balance">
                 Fitness isn't just about the time spent on the treadmill or lifting weights; it's about living a healthier, more vibrant life. Our mission is not only to help individuals reach their fitness objectives, but also to cultivate a supportive community that empowers people to lead happier, healthier lives.
@@ -110,18 +84,11 @@ const Benefits = () => {
                 Within our gym, countless success stories unfold daily, demonstrating the transformative power of dedication and camaraderie. These stories are an invitation for you to become part of this incredible journey toward personal growth and well-being. Join us and let's achieve greatness together.
               </p>
             </motion.div>
-            
+
             {/* BUTTON */}
-            <motion.div 
+            <motion.div
               className="relative mt-16"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{ delay: 0.2, duration: 0.5 }}
-              variants={{
-                hidden: { opacity: 0, y: 50 },
-                visible: { opacity: 1, y: 0 }
-              }}
+              {...{ ...fadeUp, transition: { ...fadeUp.transition, delay: 0.2 } }}
             >
               <ActionButton className="before:absolute before:-bottom-20 before:right-40 before:-z-10 before:content-sparkles">
                 Join Now

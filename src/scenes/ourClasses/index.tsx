@@ -1,7 +1,7 @@
 import { SelectedPage, useSelectedPage } from '@/contexts/SelectedPageContext'
 import { motion } from 'framer-motion'
 
-import { fadeRight } from '@/shared/animations'
+import { fadeRight, fadeUp, staggerChildren } from '@/shared/animations'
 import Class, { ClassType } from './Class'
 
 import image1 from "@/assets/image1.png"
@@ -53,9 +53,11 @@ const OurClasses = () => {
       id={SelectedPage.OurClasses}
       className='w-full min-h-full bg-primary-100 py-28'
     >
-      <motion.div onViewportEnter={() => setSelectedPage(SelectedPage.OurClasses)}>  
+      <motion.div 
+        className='mx-auto w-5/6'
+        onViewportEnter={() => setSelectedPage(SelectedPage.OurClasses)}
+      >  
         <motion.hgroup
-          className='mx-auto w-5/6'
           {...fadeRight}
         >
           <div className='md:w-3/5'>
@@ -66,16 +68,22 @@ const OurClasses = () => {
           </div>
         </motion.hgroup>
 
-        <div className='mt-10 h-[353px] w-full overflow-x-auto overflow-y-hidden'>
-          <ul className='w-[2800px] whitespace-nowrap'>
+        <motion.div 
+          className='py-10 scrollbar-100 overflow-x-auto'
+          {...fadeUp}
+        >
+          <motion.ul 
+            className='w-[2800px] md:w-[3000px] flex-around gap-10'
+            {...staggerChildren}
+          >
             {CLASSES_LIST.map((classItem: ClassType, index) => (
               <Class
                 key={`${classItem.name}-${index}`}
                 data={classItem}
               />
             ))}
-          </ul>
-        </div>
+          </motion.ul>
+        </motion.div>
       </motion.div>
     </section>
   )

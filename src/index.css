@@ -24,6 +24,30 @@ html, body, #root, .app, main{
   .balance{
     text-wrap: balance;
   }
+  .no-x-scrollbar{
+    overflow-x: scroll;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  }
+  .no-x-scrollbar::-webkit-scrollbar{
+    width: 0;
+    height: 0;
+  }
+  .scrollbar-100::-webkit-scrollbar {
+    @apply w-2 md:w-1
+  }
+  /* Track */
+  .scrollbar-100::-webkit-scrollbar-track {
+    @apply bg-slate-50 rounded-lg
+  }
+  /* Handle */
+  .scrollbar-100::-webkit-scrollbar-thumb {
+    @apply bg-primary-300 rounded-lg;
+  }
+  /* Handle on hover */
+  .scrollbar-100::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary-500;
+  }
 }
 
 @layer components {

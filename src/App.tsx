@@ -5,6 +5,7 @@ import Home from "@/scenes/home"
 import Benefits from "@/scenes/benefits"
 import OurClasses from "@/scenes/ourClasses"
 import ContactUs from "@/scenes/contactUs"
+import Footer from "@/scenes/footer"
 
 
 
@@ -29,7 +30,7 @@ function App() {
 
 
   return (
-    <div className="app bg-gray-20">
+    <div className="app">
       <SelectedPageContext.Provider value={{selectedPage, setSelectedPage}}>
         <Navbar
           isTopOfPage={isTopOfPage}
@@ -40,6 +41,7 @@ function App() {
           <OurClasses />
           <ContactUs />
         </main>
+        <Footer />
       </SelectedPageContext.Provider>
     </div>
   )

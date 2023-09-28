@@ -19,11 +19,14 @@ const Home = () => {
   return (
     <section
       id={SelectedPage.Home}
-      className='flex flex-col gap-16 bg-gray-20 py-24 md:h-full'
+      className='flex flex-col gap-16 bg-gray-20 pt-24 pb-12  md:h-full'
     >
-      <motion.div onViewportEnter={() => setSelectedPage(SelectedPage.Home)}>
+      <motion.div 
+        className='mx-auto w-5/6'
+        onViewportEnter={() => setSelectedPage(SelectedPage.Home)}
+      >
         {/* IMAGE & MAIN HEADER */}
-        <header className="hero max-w-[1366px] md:flex mx-auto w-5/6 items-center justify-center md:h-5/6">
+        <header className="hero md:flex mx-auto max-w-[1366px] items-center justify-center md:h-5/6">
           <motion.hgroup
             className='relative z-10 md:basis-3/5'
             initial="hidden"
@@ -40,8 +43,8 @@ const Home = () => {
             </h1>
             <p className='mt-8 text-sm balance'>
               Unrivaled Gym. Unparalleled Training Fitness Classes. World Class
-              Studios to get the Body Shape that you Dream of. Get Your Dream
-              Body Now.
+              Studios To Get The Body Shape That You Dream Of. Get Your Dream
+              Body Now!
             </p>
 
             <motion.div
@@ -70,9 +73,10 @@ const Home = () => {
           <img className='min-w-0 mx-auto md:mr-0 md:z-10' src={HomePageGraphic} alt="Evogym Trainer" />
 
         </header>
-
-        {/* SPONSORS */}
-        {isMdScreen ? (
+      </motion.div>
+      
+       {/* SPONSORS */}
+       {isMdScreen ? (
           <div className='flex items-center h-[150px] w-full bg-primary-100 py-10'>
             <div className='mx-auto w-5/6'>
               <div className='flex w-3/5 items-center justify-between'>
@@ -83,7 +87,6 @@ const Home = () => {
             </div>
           </div>
         ) : null}
-      </motion.div>
     </section>
   )
 }

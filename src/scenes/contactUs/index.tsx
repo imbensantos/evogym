@@ -45,7 +45,7 @@ const ContactUs = () => {
               target='_blank'
               onSubmit={onSubmit}
               method="POST"
-              action="https://formsubmit.co/5e9c1e54bb8e9eb6e50c2ec8d0e08108"
+              action="https://formsubmit.co/3946bf27dfbd80cd8abe651cc4219e5e"
             >
               <input 
                 className='input-text'

@@ -38,7 +38,7 @@ const Navbar = ({ isTopOfPage }: Props) => {
                   ))}
                 </ul>
                 <div className="flex-between gap-8">
-                  <p>Sign In</p>
+                  <a href="#SignIn"><p>Sign In</p></a>
                   <ActionButton>Become a Member</ActionButton>
                 </div>
               </nav>
@@ -55,7 +55,7 @@ const Navbar = ({ isTopOfPage }: Props) => {
       </div>
 
       {/* MOBILE MENU MODAL */}
-      <nav className={`${(!isMdScreen && isNavToggled) ? 'right-0' : '-right-full'} fixed bottom-0 z-40 h-full w-[300px] bg-primary-100 drop-shadow-xl transition-all duration-500`}>
+      <nav className={`${(!isMdScreen && isNavToggled) ? 'right-0' : '-right-[110%]'} fixed bottom-0 z-40 h-full w-[300px] bg-primary-100 drop-shadow-xl transition-all duration-500`}>
         {/* CLOSE ICON */}
         <div className="flex justify-end py-8 px-14">
           <button onClick={() => setIsNavToggled(!isNavToggled)}>

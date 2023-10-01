@@ -32,6 +32,7 @@ export default {
         circles: "url('@/assets/Circles.png')",
       },
       screens: {
+        xxs: "280px",
         xs: "480px",
         sm: "768px",
         md: "1060px",

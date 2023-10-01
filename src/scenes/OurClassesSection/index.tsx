@@ -69,11 +69,11 @@ const OurClasses = () => {
         </motion.hgroup>
 
         <motion.div 
-          className='py-10 scrollbar-100 overflow-x-auto'
+          className='py-10 scrollbar-100 overflow-x-auto overflow-y-hidden'
           {...fadeUp}
         >
           <motion.ul 
-            className='w-[2800px] md:w-[3000px] flex-around gap-10'
+            className={`w-[2150px] md:w-[3000px] flex-between gap-10`}
             {...staggerChildren}
           >
             {CLASSES_LIST.map((classItem: ClassType, index) => (

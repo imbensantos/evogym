@@ -49,7 +49,7 @@ const Home = () => {
                 Join Now
               </ActionButton>
               <Link
-                href={SelectedPage.ContactUs}
+                href={SelectedPage.Benefits}
               >
                 Learn More
               </Link>

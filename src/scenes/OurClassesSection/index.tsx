@@ -51,7 +51,7 @@ const OurClasses = () => {
   return (
     <section
       id={SelectedPage.OurClasses}
-      className='w-full min-h-full bg-primary-100 py-28'
+      className='w-full min-h-full bg-primary-100 pt-28 pb-10 md:pb-28'
     >
       <motion.div 
         className='mx-auto w-5/6'
@@ -73,7 +73,7 @@ const OurClasses = () => {
           {...fadeUp}
         >
           <motion.ul 
-            className={`w-[2150px] md:w-[3000px] flex-between gap-10`}
+            className={`w-[1500px] xxs:w-[2150px] md:w-[3000px] flex justify-between items-stretch gap-10`}
             {...staggerChildren}
           >
             {CLASSES_LIST.map((classItem: ClassType, index) => (
